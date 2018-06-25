@@ -1,0 +1,62 @@
+Số cơ số 8 không được phép dùng số 0xxx trong javascript vì không khuyến khích lập trình
+viên chèn số 0 vào trong script, do đó ta phải parseInt rõ ràng nó:
+ var y = parseInt('0712',8);
+ console.log(y);
+ Trong bản mới của ECMA 2015, số cơ số 8 khai báo theo sau 0o hoặc 0O: ví dụ 0o711;
+ var x = 0o711;
+ 
+ Code hoàn chỉnh:
+ (function(){
+  "use strict";
+ 	var x = 0b11001;
+  var y = parseInt('010',8);
+  console.log(x);
+  console.log(y);
+  var z = 0o71;
+  console.log(z);-c
+}
+)();
+ Nên khai báo ()
+___________________________________________________________
+Grammar and types
+
+1.Basic
+ -Js phân biệt hoa thường: var Short # var short,
+ -Spaces,Tab,Newline character được gọi là kí tự khoảng trắng - whitespaces
+2.comment
+3.Declartions: khai báo
+var: khai báo biến, không cần khởi tạo giá trị
+let: Khai báo blocked-scope ,local variable : biến cục bộ
+const: khai báo blocked-scopes, Không chỉnh sửa được
+  a.Variable
+Tên của biến, gọi là identifier tuân theo nguyên tắc sau.
+Biến phải bắt đầu bằng letter,$ hoặc _,phân biệt hoa thường
+  b.Khai báo Biến
+    var x = 5, let y = 6
+    var có thể được dùng để khai báo global và local variable, nếu biến được đặt bên ngoài hàm thì gọi là biến toàn cục
+    let dùng để khai báo biến local
+  c.Evaluating variable.
+  -undefined: biến được khai báo mà không gán giá trị thì sẽ có giá trị là undefined
+    ex: var a;
+        if(a== undefined) alert("a is undefined");
+  -Giá trị undefined được xem là false tronng boolean context(ngữ cảnh logic)
+    ex: var a; if(!a) alert("a is false");
+  -Giá trị undefined được xem là NaN trong numeric context (ngữ cảnh số)
+
+  -Khi một var có giá trị null thì nó được xem là 0 trong numeric context và false trong boolean context.
+
+  d.Variable scope (phạm vi biến)
+  -Biến được khai báo với từ khóa var thì có phạm vi toàn cục-global context
+  -Biến được khai báo với từ khóa let,const thì có phạm vi local
+  ex: if(true){ var x = 5}; console.log(x); // in ra 5
+      if(true){ let y = 3}; console.log(y); // Reference error vì biến y có phạm vi local
+
+  e.variable hoisting: nâng phạm vi biến
+  -Với biến var, nếu ta sử dụng biến trước khi khai báo thì ko có lỗi gì, biến đó mặc định có giá trị undefined
+  -Với biến khai báo let thì sẽ có lỗi nếu ta dùng biến trước khi khai báo
+  ex: console.log(x); var x= 3; // in ra undefined
+      console.log(y); let y = 4;// Reference error
+
+  f. Function hoisting
+   ex: foo(); function foo(){ console.log("xxx");} // in ra xxx
+
