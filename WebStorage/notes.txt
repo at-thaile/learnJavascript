@@ -1,0 +1,16 @@
+Web Storage API cung cấp các cơ chế mà browser có thể lưu cặp key/value mà nó
+nhiều trực quan hơn việc sử dụng cookies
+
+1. Concepts and usage(khái niệm và sử dụng)
+Có 2 cơ chế trong web storage dưới đây
+a.sessionStorage
+b.localStorage 
+  lưu trữ dữ liệu nhưng vẫn persit (tồn tại ) khi đóng và mở lại browser
+Thuộc tính chỉ đọc, localStorage cho phép ta truy cập Storage object 
+
+Cú pháp: myStorage = window.localStorage; hoặc myStorage = localStorage;
+
+Thật ra có window đi trước có hay không vẫn không sao vì window là global variable
+
+Tất cả các biến trong global namespace đều có thể truy cập là window.<variable_name>
+

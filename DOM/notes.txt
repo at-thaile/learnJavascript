@@ -1,0 +1,17 @@
+attributes của một tag như href,class,id,onclick,style,width,height,src,....
+Với element ID thì chỉ có một nên ta không cần chỉ định vị trí index
+Còn với getElementsByClassName hay getElementsByTagName sẽ trả về một mảng các object
+nên ta phải chỉ định index để biết object nào 
+Ví dụ. <p class = "content" style = "color: red;"></p>
+       <p class = "content"></p>
+
+       document.getElementsByClassName("content")[0].innerHTML = "Thai le quang"; // Tức là thẻ p đầu tiên sẽ có nội dung Thai Le quang
+       còn thẻ p thứ 2 thì không bị ảnh hưởng gì
+attributes cũng trả lại một mảng khi ta , var x = document.getElementsByTagName("p")[0].attributes
+Ở đây mảng attributes sẽ là mảng có 2 object lần lượt là class = "content" và style = "color: red"
+do đó muốn thay đổi color ta phải chỉ định : x[1].setAttribute("style', "color: red");
+còn nếu muốn lấy attribute color của thẻ p đầu tiên thì x[1].name (trả về color), x[1].value(trả về red);
+
+______________________________________
+
+Đối với thẻ input, để lấy giá trị trong ô input thì ta dùng document.getElementById("ten").value;

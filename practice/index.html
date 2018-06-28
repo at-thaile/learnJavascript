@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+      var x ="Hello world";
+      var phone_num = "01657814418";
+  </script>
+</head>
+<body>
+  <h1>HEllo</h1>
+  <div id="demo">This will be changed</div>
+  <iframe src="frame.html" name="frame1" frameborder="0" width = "300px;">
+    <p>This is show in frame</p>
+    scirpt
+  </iframe> 
+  <button type="button" onclick="show()">Clickme</button>
+  <script>
+    function show(){
+      document.getElementById("demo").innerHTML = parent.phone_num;
+    }
+  </script>
+</body>
+</html>

@@ -18,19 +18,21 @@ viên chèn số 0 vào trong script, do đó ta phải parseInt rõ ràng nó:
 )();
  Nên khai báo ()
 ___________________________________________________________
-Grammar and types
+                            Grammar and types
 
 1.Basic
  -Js phân biệt hoa thường: var Short # var short,
  -Spaces,Tab,Newline character được gọi là kí tự khoảng trắng - whitespaces
+
 2.comment
+
 3.Declartions: khai báo
-var: khai báo biến, không cần khởi tạo giá trị
-let: Khai báo blocked-scope ,local variable : biến cục bộ
-const: khai báo blocked-scopes, Không chỉnh sửa được
+  var: khai báo biến, không cần khởi tạo giá trị
+  let: Khai báo blocked-scope ,local variable : biến cục bộ
+  const: khai báo blocked-scopes, Không chỉnh sửa được
   a.Variable
-Tên của biến, gọi là identifier tuân theo nguyên tắc sau.
-Biến phải bắt đầu bằng letter,$ hoặc _,phân biệt hoa thường
+    Tên của biến, gọi là identifier tuân theo nguyên tắc sau.
+    Biến phải bắt đầu bằng letter,$ hoặc _,phân biệt hoa thường
   b.Khai báo Biến
     var x = 5, let y = 6
     var có thể được dùng để khai báo global và local variable, nếu biến được đặt bên ngoài hàm thì gọi là biến toàn cục
@@ -59,4 +61,30 @@ Biến phải bắt đầu bằng letter,$ hoặc _,phân biệt hoa thường
 
   f. Function hoisting
    ex: foo(); function foo(){ console.log("xxx");} // in ra xxx
+
+  g. Global variable
+    global variable là fact propreties(thuộc tính) của global object(đối tượng toàn cục)
+    Trong một trang web, đối tượng toàn cục là window, do đó ta có thể set và get biến tòa cục bằng cách sử dụng
+    window.var_name.
+    do đó , ta có thể truy cập biến toàn cục từ một window hoặc frame của window khác bằng cách gọi name của window hoặc frame.
+  
+  h.Constants
+    -ta có thể tạo hằng số với từ khóa const. Cú pháp của constant identifier 
+    giống nư var identifier, nên viết hoa, nên dài thì dùng _ để phân chia
+    ví dụ : const CLASS_NAME = "10A1";
+    -Một khi đã khai báo hằng thì không thể gán lại giá trị hay khai báo lại 
+    -Phạm vi của constant giống như let trong khai báo biến.
+    -Ta không thể khai báo constant cùng tên với tên hàm hoặc tên biến trong cùng phạm vi- scope
+    ex: fucntion f(){}; const f=5; 
+        function f(){const g = 5; var g }; //error
+
+    -Tuy nhiên , propreties of objects gán cho constant không được protected.
+     do đó , statement có thể được thực thi mà ko có vấn đề gì
+     ex: const MY_OBJECT = {'quantity': '5'};
+         MY_OBJECT.quantity = '6'; //OK
+
+4. Data structures and types(Kiểu dữ liệu và cấu trúc dữ liệu)
+  
+  a.Data types
+    trong bản mới nhất của ECMAScript định nghĩa 7 kiểu dữ liệu cơ bản
 
