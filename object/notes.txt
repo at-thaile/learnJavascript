@@ -1,0 +1,50 @@
+
+Javascript được thiết kế dựa vào ngôn ngữ OOP
+Một object là tập các thuộc tính -properties
+1 proprety là một mối liên kết giữa một name(key) với một giá trị(value)
+1 propertie's value có thể là một function, trong trường hợp đó, proprety được
+xem là một phương thức (method).
+-Ngoài các object được định nghĩa trước trong browser, ta có thể
+định nghĩa các own object của ta.
+______________________________________
+
+Object và properties.
+
+Một Js object có các properties liên kết với nó.
+Ta có thể truy cập properties của một object với cú pháp: objecName.propretyName
+-Trong JS< objecName và propretyName phân biệt chữ hoa-thường
+-Ta có thể định nghĩa proprety bằng cách gán cho nó một giá trị.
+EX: var myCar = new Object();
+    myCar.make = 'Ford'; myCar.model = 'Mustang'; myCar.year = 1969;
+    
+    Một properties của một object là undefined và not null
+    EX: myCar.color //undefined
+
+    
+Để liệt kê các thuộc tính (properties)của một object , ta làm như sau:
+eX: var x = {name : 'thai', age : 27};
+    var kes = Object.keys(x);
+    console.log(kes);
+
+Để liệt kê tất cả các attributes của một tag ta làm như sau: 
+  var x = document.getElementsByTagName("BUTTON");
+  console.log("type of x: "+ typeof x);
+  var y = x[0].attributes;
+  var s = "";
+  for(var i = 0; i < y.length; i++) {
+    s += y[i].name + "->" + y[i].value + "\n";
+  }
+  console.log(s);
+______________________________
+
+localStorage.setItem("abc", 8);
+console.log(localStorage.getItem("abc"));
+Có thể không hiện thị 8 vì hàm setItem là asynchronized nên chạy ngay có thể chưa hiển thị
+setTimeOut(3000) ; sau 3s mới thực hiện
+setInterval(3000); Cứ 3s chạy một lần
+ex;
+console.log(x);
+console.log(setTimeOut(3000));
+
+Dùng window.onload để nạp html trước rồi mới nạp js trước
+
